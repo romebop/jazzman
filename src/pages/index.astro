@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import tommyPhoto from '../assets/tommy.jpg';
+import Counter from '../components/Counter';
 
 const pageTitle = 'Tommy Zugell';
 
@@ -11,4 +12,5 @@ const pageTitle = 'Tommy Zugell';
 
 <BaseLayout pageTitle={pageTitle}>
   <Image src={tommyPhoto} alt='Tommy photo' />
+  <Counter client:visible />
 </BaseLayout>
