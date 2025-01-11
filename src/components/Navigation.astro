@@ -1,5 +1,30 @@
 <div class='nav-links'>
-  <a href='/'>Home</a>
-  <a href='/shows/'>Shows</a>
-  <a href='/weddings/'>Weddings</a>
+  <a href='/' class="underline-hover">Home</a>
+  <a href='/shows/' class="underline-hover">Shows</a>
+  <a href='/weddings/' class="underline-hover">Weddings</a>
 </div>
+
+<style>
+  .underline-hover {
+    text-decoration: none;
+    position: relative;
+  }
+
+  .underline-hover::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    left: 0;
+    bottom: -2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+  }
+
+  .underline-hover:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+</style>
