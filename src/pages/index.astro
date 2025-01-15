@@ -1,5 +1,6 @@
 ---
 
+import { Image } from 'astro:assets';
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import tommyPhoto from '../assets/tommy.jpg';
@@ -16,6 +17,6 @@ const images = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <img src={tommyPhoto.src} alt='Tommy photo' />
+  <Image src={tommyPhoto} alt='Tommy photo' />
   <Carousel client:only='react' images={images} />
 </BaseLayout>
