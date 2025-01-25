@@ -1,8 +1,21 @@
+---
+
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/shows', label: 'Shows' },
+  { href: '/wddings', label: 'Weddings' },
+  { href: '/contact', label: 'Contact' },
+];
+
+---
+
 <div class='nav-links'>
-  <a href='/' class="underline-hover">Home</a>
-  <a href='/shows/' class="underline-hover">Shows</a>
-  <a href='/weddings/' class="underline-hover">Weddings</a>
-  <a href='/contact/' class="underline-hover">Weddings</a>
+  {links.map(link => {
+    <a
+      href={link.href}
+      class={`underline-hover ${Astro.url.pathname === link.href ? 'active' : ''}`}
+    >{link.label}</a>
+  })}
 </div>
 
 <style>
@@ -27,5 +40,13 @@
   .underline-hover:hover::after {
     transform: scaleX(1);
     transform-origin: left;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a.active {
+    text-decoration: underline;
   }
 </style>
