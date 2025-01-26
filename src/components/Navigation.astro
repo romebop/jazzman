@@ -3,19 +3,19 @@
 const links = [
   { href: '/', label: 'Home' },
   { href: '/shows', label: 'Shows' },
-  { href: '/wddings', label: 'Weddings' },
+  { href: '/weddings', label: 'Weddings' },
   { href: '/contact', label: 'Contact' },
 ];
 
 ---
 
 <div class='nav-links'>
-  {links.map(link => {
+  {links.map(link =>
     <a
       href={link.href}
       class={`underline-hover ${Astro.url.pathname === link.href ? 'active' : ''}`}
     >{link.label}</a>
-  })}
+  )}
 </div>
 
 <style>
