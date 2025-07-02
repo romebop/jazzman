@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { Image } from 'astro:assets';
+import '../styles/global.css';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import tommyPhoto from '../assets/tommy.jpg';
+import Carousel from '../components/Carousel';
+
+const pageTitle = 'Tommy Zugell';
+
+const images = [
+  tommyPhoto.src,
+  tommyPhoto.src,
+  tommyPhoto.src,
+];
+
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout pageTitle={pageTitle}>
+
+  <Image src={tommyPhoto} alt='Tommy photo' />
+
+  <Carousel client:only='react' images={images} />
+
+  <video 
+    autoplay 
+    muted 
+    loop 
+    playsinline 
+    width='100%' 
+    style='max-height: 100vh; object-fit: cover;'
+  >
+    <source src='/scared_dog.mp4' type='video/mp4' />
+    Your browser does not support the video tag.
+  </video>
+
+</BaseLayout>
