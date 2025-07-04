@@ -3,16 +3,16 @@
 import { Image } from 'astro:assets';
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import tommyPhoto from '../assets/tommy.jpg';
-import Carousel from '../components/Carousel';
+import tommyPhoto from '../assets/tommy-removebg.png';
+// import Carousel from '../components/Carousel';
 
 const pageTitle = 'Tommy Zugell';
 
-const images = [
-  tommyPhoto.src,
-  tommyPhoto.src,
-  tommyPhoto.src,
-];
+// const images = [
+//   tommyPhoto.src,
+//   tommyPhoto.src,
+//   tommyPhoto.src,
+// ];
 
 ---
 
@@ -20,7 +20,7 @@ const images = [
 
   <Image src={tommyPhoto} alt='Tommy photo' />
 
-  <Carousel client:only='react' images={images} />
+  <!-- <Carousel client:only='react' images={images} />
 
   <video 
     autoplay 
@@ -32,6 +32,6 @@ const images = [
   >
     <source src='/scared_dog.mp4' type='video/mp4' />
     Your browser does not support the video tag.
-  </video>
+  </video> -->
 
 </BaseLayout>

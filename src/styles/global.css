@@ -1,3 +1,20 @@
+:root {
+  /* naming convention: --color-<category>-<variant> */
+
+  --color-background-base: #1A1A40;
+
+  /* accent colors */
+  --color-accent-primary: #E6B422; /* gold */
+  --color-accent-secondary: #E66A22; /* coral */
+
+  /* text colors */
+  --color-text-body: #FFF8E1; /* warm off-white for body text */
+  --color-text-inverse: var(--color-background-base); /* for text on light backgrounds */
+  
+  /* other utility colors */
+  --color-border-default: var(--color-accent-primary);
+}
+
 /* css reset */
 
 *, *::before, *::after {
@@ -42,8 +59,9 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: 'Bitter';
-  background-color: #1a1a40;
-  display: flex;  
+  background-color: var(--color-background-base);
+  color: var(--color-text-body);
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
@@ -58,14 +76,14 @@ body {
   width: 40px;
   height: 5px;
   margin-bottom: 10px;
-  background-color: #ff9776;
+  background-color: var(--color-accent-secondary);
 }
 
 .nav-links {
   width: 100%;
   top: 5rem;
   left: 48px;
-  background-color: #ff9776;
+  background-color: var(--color-accent-secondary);
   display: none;
   margin: 0;
 }
@@ -82,7 +100,7 @@ body {
 
 .nav-links a:hover,
 .nav-links a:focus {
-  background-color: #ff9776;
+  background-color: var(--color-accent-secondary);
 }
 
 .expanded {
