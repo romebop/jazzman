@@ -12,7 +12,7 @@
   --color-text-inverse: var(--color-background-base); /* for text on light backgrounds */
   
   /* other utility colors */
-  --color-border-default: var(--color-accent-primary);
+  /* --color-border-default: var(--color-accent-primary); */
 }
 
 /* css reset */

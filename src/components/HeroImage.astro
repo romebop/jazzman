@@ -1,0 +1,41 @@
+---
+import { Image } from 'astro:assets';
+import tommyPhoto from '../assets/tommy-removebg-cropped.png';
+---
+
+<div class="hero-container">
+  <Image class="tommy-photo" src={tommyPhoto} alt='Tommy photo' />
+  <h1 class="hero-text">TOMMY ZUGELL</h1>
+</div>
+
+<style>
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    border-bottom: 1px solid var(--color-accent-primary);
+  }
+
+  .tommy-photo {
+    display: block;
+    object-fit: contain;
+    object-position: 50% 50%;
+    margin-top: 140px;
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: var(--color-accent-primary);
+    font-family: 'Averia Serif Libre', serif;
+    font-size: 140px;
+    line-height: 140px;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+  }
+</style>

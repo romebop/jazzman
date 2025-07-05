@@ -1,9 +1,8 @@
 ---
 
-import { Image } from 'astro:assets';
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import tommyPhoto from '../assets/tommy-removebg.png';
+import HeroImage from '../components/HeroImage.astro';
 // import Carousel from '../components/Carousel';
 
 const pageTitle = 'Tommy Zugell';
@@ -18,7 +17,7 @@ const pageTitle = 'Tommy Zugell';
 
 <BaseLayout pageTitle={pageTitle}>
 
-  <Image src={tommyPhoto} alt='Tommy photo' />
+  <HeroImage />
 
   <!-- <Carousel client:only='react' images={images} />
 
@@ -35,3 +34,4 @@ const pageTitle = 'Tommy Zugell';
   </video> -->
 
 </BaseLayout>
+
