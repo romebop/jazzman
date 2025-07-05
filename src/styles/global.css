@@ -1,7 +1,13 @@
 :root {
   /* naming convention: --color-<category>-<variant> */
 
+  /* background colors */
   --color-background-base: #1A1A40;
+  
+  /* section background colors */
+  --color-background-section-light: #F5F5F5;
+  --color-background-section-mid: #EAE0D5;
+  --color-background-section-dark: #C6AC8F;
 
   /* accent colors */
   --color-accent-primary: #E6B422; /* gold */

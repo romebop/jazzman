@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import tommyPhoto from '../assets/tommy-removebg-cropped.png';
+
+const heroTextSize = '140px';
 ---
 
 <div class="hero-container">
@@ -8,7 +10,7 @@ import tommyPhoto from '../assets/tommy-removebg-cropped.png';
   <h1 class="hero-text">TOMMY ZUGELL</h1>
 </div>
 
-<style>
+<style define:vars={{ heroTextSize }}>
   .hero-container {
     display: flex;
     flex-direction: column;
@@ -22,7 +24,7 @@ import tommyPhoto from '../assets/tommy-removebg-cropped.png';
     display: block;
     object-fit: contain;
     object-position: 50% 50%;
-    margin-top: 140px;
+    margin-top: 220px;
   }
 
   .hero-text {
@@ -32,8 +34,8 @@ import tommyPhoto from '../assets/tommy-removebg-cropped.png';
     transform: translate(-50%, 0);
     color: var(--color-accent-primary);
     font-family: 'Averia Serif Libre', serif;
-    font-size: 140px;
-    line-height: 140px;
+    font-size: var(--heroTextSize);
+    line-height: var(--heroTextSize);
     text-align: center;
     margin: 0;
     width: 100%;
