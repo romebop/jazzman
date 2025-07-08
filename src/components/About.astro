@@ -1,8 +1,8 @@
 ---
 ---
 <section>
-  <h2>I'm Tommy Zugell, Saxophonist Extraordinaire and Jazzman 4 Lyfe.</h2>
-  <p>
+  <p id='main-message'>I'm Tommy Zugell, Saxophonist Extraordinaire and Jazzman 4 Lyfe.</p>
+  <p id='detail-message'>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
   </p>
 </section>
@@ -17,18 +17,18 @@
     color: var(--color-accent-primary);
   }
 
-  h2 {
+  #main-message {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
-    font-size: 40px;
+    font-size: 32px;
     text-align: left;
     align-self: end;
     justify-self: center;
     margin: 0;
-    font-weight: 400;
+    font-weight: 600;
   }
 
-  p {
+  #detail-message {
     grid-column: 2 / 3;
     grid-row: 2 / 3;
     font-size: 22px;

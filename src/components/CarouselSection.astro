@@ -1,7 +1,19 @@
 ---
+
+import Carousel from '../components/Carousel';
+import photo2 from '../assets/photo2.jpg';
+import photo3 from '../assets/photo3.jpg';
+import photo4 from '../assets/photo4.jpg';
+
+const images = [
+  photo2.src,
+  photo3.src,
+  photo4.src,
+];
+
 ---
 <section>
-  <!-- Carousel will go here -->
+  <Carousel client:only='react' images={images} />
 </section>
 
 <style>
@@ -9,5 +21,9 @@
     height: 1000px;
     width: 100%;
     background-color: var(--color-background-section-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 </style>
