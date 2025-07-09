@@ -6,8 +6,8 @@ const heroTextSize = '140px';
 ---
 
 <div class="hero-container">
-  <Image class="tommy-photo" src={tommyPhoto} alt='Tommy photo' />
   <h1 class="hero-text">TOMMY ZUGELL</h1>
+  <Image class="tommy-photo" src={tommyPhoto} alt='Tommy photo' />
 </div>
 
 <style define:vars={{ heroTextSize }}>
@@ -19,16 +19,10 @@ const heroTextSize = '140px';
     width: 100%;
     border-bottom: 1px solid var(--color-accent-primary);
   }
-
-  .tommy-photo {
-    display: block;
-    object-fit: contain;
-    object-position: 50% 50%;
-    margin-top: 220px;
-  }
-
+  
   .hero-text {
     position: absolute;
+    z-index: -1;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
@@ -39,5 +33,12 @@ const heroTextSize = '140px';
     text-align: center;
     margin: 0;
     width: 100%;
+  }
+
+  .tommy-photo {
+    display: block;
+    object-fit: contain;
+    object-position: 50% 50%;
+    margin-top: 72px;
   }
 </style>

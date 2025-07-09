@@ -2,8 +2,8 @@
 
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroImage from '../components/HeroImage.astro';
-import About from '../components/About.astro';
+import HeroSection from '../components/HeroSection.astro';
+import AboutSection from '../components/AboutSection.astro';
 import CarouselSection from '../components/CarouselSection.astro';
 import VideoSection from '../components/VideoSection.astro';
 
@@ -12,28 +12,12 @@ const pageTitle = 'Tommy Zugell';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-
-  <HeroImage />
-  <About />
+  <div class="initial-view">
+    <HeroSection />
+    <AboutSection />
+  </div>
   <CarouselSection />
   <VideoSection />
-
-  <!--
-
-  <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    width='100%' 
-    style='max-height: 100vh; object-fit: cover;'
-  >
-    <source src='/scared_dog.mp4' type='video/mp4' />
-    Your browser does not support the video tag.
-  </video> 
-  
-  -->
-
 </BaseLayout>
 
 
