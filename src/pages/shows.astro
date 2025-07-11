@@ -1,12 +1,86 @@
 ---
-
 import '../styles/global.css';
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 const pageTitle = 'Shows - Tommy Zugell';
 
+const shows = [
+  { month: 'JUL', day: '12', location: 'Pittsburgh, PA', details: '[Early Show]' },
+  { month: 'JUL', day: '13', location: 'Columbus, OH', details: '' },
+  { month: 'JUL', day: '14', location: 'Cleveland, OH', details: '[Late Show]' },
+  { month: 'AUG', day: '01', location: 'New York, NY', details: '' },
+  { month: 'AUG', day: '02', location: 'Boston, MA', details: '' },
+  { month: 'AUG', day: '03', location: 'Philadelphia, PA', details: '[Sold Out]' },
+  { month: 'SEP', day: '15', location: 'Chicago, IL', details: '' },
+  { month: 'SEP', day: '16', location: 'Chicago, IL', details: '[Late Show]' },
+  { month: 'OCT', day: '10', location: 'Nashville, TN', details: '' },
+  { month: 'OCT', day: '11', location: 'Atlanta, GA', details: '' },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <h1>here are some shows</h1>
+  <h1>UPCOMING</h1>
+  <div class="shows-container">
+    {shows.map(show => (
+      <div class="show-row">
+        <div class="show-date">
+          <span>{show.month}</span>
+          <span>{show.day}</span>
+        </div>
+        <div class="show-info">
+          <div class="show-location">{show.location}</div>
+          <div class="show-details">{show.details}</div>
+        </div>
+      </div>
+    ))}
+  </div>
 </BaseLayout>
+
+<style>
+  h1 {
+    text-align: center;
+    color: var(--color-accent-primary);
+    font-size: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  .shows-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  .show-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgba(255, 248, 225, 0.2);
+  }
+
+  .show-date {
+    color: var(--color-accent-primary);
+    flex-basis: 100px;
+  }
+
+  .show-date span {
+    display: block;
+  }
+
+  .show-date span:last-child {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .show-info {
+    display: flex;
+    align-items: baseline;
+    flex-grow: 1;
+    margin-left: 4rem;
+  }
+
+  .show-details {
+    margin-left: 0.5rem;
+    color: rgba(255, 248, 225, 0.7);
+  }
+</style>
