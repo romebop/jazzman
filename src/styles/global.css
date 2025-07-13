@@ -20,6 +20,8 @@
   
   /* other utility colors */
   /* --color-border-default: var(--color-accent-primary); */
+
+  scrollbar-gutter: stable;
 }
 
 /* css reset */
