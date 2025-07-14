@@ -1,6 +1,6 @@
 ---
 ---
-<section>
+<section class="about-section">
   <p id='main-message'>I'm Tommy Zugell, Saxophonist Extraordinaire and Jazzman 4 Lyfe.</p>
   <p id='detail-message'>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
@@ -8,13 +8,18 @@
 </section>
 
 <style>
-  section {
+  .about-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     gap: 20px;
     padding: 80px 520px;
     color: var(--color-accent-primary);
+  }
+
+  #main-message,
+  #detail-message {
+    opacity: 0;
   }
 
   #main-message {
@@ -26,6 +31,7 @@
     justify-self: center;
     margin: 0;
     font-weight: 600;
+    animation: fadeInUp 1s forwards;
   }
 
   #detail-message {
@@ -37,5 +43,7 @@
     align-self: start;
     justify-self: center;
     margin: 0;
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.3s; /* Stagger the animation */
   }
 </style>

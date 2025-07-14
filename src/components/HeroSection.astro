@@ -6,7 +6,9 @@ const heroTextSize = '140px';
 ---
 
 <div class="hero-container">
-  <h1 class="hero-text">TOMMY ZUGELL</h1>
+  <div class="hero-text-container">
+    <h1 class="hero-text">TOMMY ZUGELL</h1>
+  </div>
   <Image class="tommy-photo" src={tommyPhoto} alt='Tommy photo' />
 </div>
 
@@ -20,19 +22,23 @@ const heroTextSize = '140px';
     border-bottom: 1px solid var(--color-accent-primary);
   }
   
-  .hero-text {
+  .hero-text-container {
     position: absolute;
     z-index: -1;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
+    width: 100%;
+  }
+
+  .hero-text {
     color: var(--color-accent-primary);
     font-family: 'Averia Serif Libre', serif;
     font-size: var(--heroTextSize);
     line-height: var(--heroTextSize);
     text-align: center;
     margin: 0;
-    width: 100%;
+    animation: fadeInUp 1s ease-out forwards;
   }
 
   .tommy-photo {
@@ -40,5 +46,6 @@ const heroTextSize = '140px';
     object-fit: contain;
     object-position: 50% 50%;
     margin-top: 72px;
+    animation: fadeIn 1.5s ease-in forwards;
   }
 </style>

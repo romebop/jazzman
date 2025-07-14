@@ -4,6 +4,7 @@ const mainLinks = [
   { href: '/', label: 'Home' },
   { href: '/shows', label: 'Shows' },
   { href: '/weddings', label: 'Weddings' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 ---
@@ -12,7 +13,10 @@ const mainLinks = [
   {mainLinks.map(link =>
     <a
       href={link.href}
-      class={Astro.url.pathname === link.href ? 'active' : ''}
+      class:list={[
+        { active: Astro.url.pathname === link.href },
+        { 'contact-button': link.label === 'Contact' }
+      ]}
     >{link.label}</a>
   )}
 </div>
@@ -22,20 +26,47 @@ const mainLinks = [
     height: var(--header-height);
   }
 
-  .main-links a {
+  .main-links a:not(.contact-button) {
     color: white;
     text-decoration: none;
     text-transform: none;
     font-size: 16px;
     font-weight: 400;
-    text-underline-offset: 6.4px;
+    position: relative;
+  }
+
+  .main-links a:not(.contact-button)::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: -6px;
+    left: 0;
+    background-color: white;
+    transform-origin: bottom right;
+    transition: transform 0.2s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  .main-links a:not(.contact-button):hover::after,
+  .main-links a:not(.contact-button).active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
   }
 
   .main-links a:not(:first-child) {
     margin-left: 40px;
   }
+  .contact-button {
+    background-color: var(--color-accent-secondary);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    color: white;
+    text-decoration: none;
+  }
 
-  .main-links a.active {
-    text-decoration: underline;
+  .contact-button:hover {
+    background-color: #E68A42; /* A slightly lighter shade for hover */
   }
 </style>

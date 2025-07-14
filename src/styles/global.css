@@ -152,17 +152,22 @@ header {
 
 /* animations */
 
-/* @keyframes fadeInUp {
-  0% {
-    transform: translateY(100%);
+@keyframes fadeIn {
+  from {
     opacity: 0;
   }
-  100% {
-    transform: translateY(0%);
+  to {
     opacity: 1;
   }
 }
 
-.fadeInUp-animation {
-  animation: 1.5s fadeInUp;
-} */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
