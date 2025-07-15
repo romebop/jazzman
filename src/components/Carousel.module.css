@@ -3,38 +3,62 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 600px;
-  margin: auto;
+  height: 100%;
 }
 
 .imageWrapper {
   width: 100%;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
 
 .images {
   display: flex;
+  height: 100%;
   transition: transform 0.5s ease-in-out;
 }
 
 .image {
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: contain; /* Changed to contain to prevent cropping */
   flex-shrink: 0;
 }
 
 .buttons {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-top: 10px;
-  width: 100%;
+  pointer-events: none; /* Allow clicks to pass through the container */
 }
 
 .button {
-  padding: 10px 20px;
-  font-size: 16px;
+  pointer-events: all; /* Make buttons clickable */
   cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  padding: 16px;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.prevButton {
+  margin-left: 10px;
+  border-radius: 0 3px 3px 0;
+}
+
+.nextButton {
+  margin-right: 10px;
+  border-radius: 3px 0 0 3px;
 }
 
 .dots {

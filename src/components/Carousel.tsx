@@ -32,14 +32,14 @@ const Carousel = ({ images }: { images: string[] }) => {
             />
           ))}
         </div>
-      </div>
-      <div className={styles.buttons}>
-        <button onClick={handlePrev} className={styles.button}>
-          Previous
-        </button>
-        <button onClick={handleNext} className={styles.button}>
-          Next
-        </button>
+        <div className={styles.buttons}>
+          <button onClick={handlePrev} className={`${styles.button} ${styles.prevButton}`}>
+            &#10094;
+          </button>
+          <button onClick={handleNext} className={`${styles.button} ${styles.nextButton}`}>
+            &#10095;
+          </button>
+        </div>
       </div>
       <div className={styles.dots}>
         {images.map((_, idx) => (
