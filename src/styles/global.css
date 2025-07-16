@@ -11,11 +11,11 @@
   --color-background-section-dark: #C6AC8F;
 
   /* accent colors */
-  --color-accent-primary: #E6B422; /* gold */
-  --color-accent-secondary: #E66A22; /* coral */
+  --color-accent-primary: #e6b422; /* gold */
+  --color-accent-secondary: #e66a22; /* coral */
 
   /* text colors */
-  --color-text-body: #FFF8E1; /* warm off-white for body text */
+  --color-text-body: #fff8e1; /* warm off-white for body text */
   --color-text-inverse: var(--color-background-base); /* for text on light backgrounds */
   
   /* other utility colors */

@@ -22,7 +22,7 @@
 .image {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* Changed to contain to prevent cropping */
+  object-fit: contain; /* changed to contain to prevent cropping */
   flex-shrink: 0;
 }
 
@@ -33,11 +33,11 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  pointer-events: none; /* Allow clicks to pass through the container */
+  pointer-events: none; /* allow clicks to pass through the container */
 }
 
 .button {
-  pointer-events: all; /* Make buttons clickable */
+  pointer-events: all; /* make buttons clickable */
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
