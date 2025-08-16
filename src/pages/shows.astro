@@ -20,16 +20,16 @@ const shows = [
 
 <BaseLayout pageTitle={pageTitle}>
   <h1>UPCOMING</h1>
-  <div class="shows-container">
+  <div class='shows-container'>
     {shows.map(show => (
-      <div class="show-row">
-        <div class="show-date">
+      <div class='show-row'>
+        <div class='show-date'>
           <span>{show.month}</span>
           <span>{show.day}</span>
         </div>
-        <div class="show-info">
-          <div class="show-location">{show.location}</div>
-          <div class="show-details">{show.details}</div>
+        <div class='show-info'>
+          <div class='show-location'>{show.location}</div>
+          <div class='show-details'>{show.details}</div>
         </div>
       </div>
     ))}

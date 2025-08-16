@@ -5,11 +5,11 @@ import tommyPhoto from '../assets/tommy-removebg-cropped.png';
 const heroTextSize = '140px';
 ---
 
-<div class="hero-container">
-  <div class="hero-text-container">
-    <h1 class="hero-text">TOMMY ZUGELL</h1>
+<div class='hero-container'>
+  <div class='hero-text-container'>
+    <h1 class='hero-text fade-in'>TOMMY ZUGELL</h1>
   </div>
-  <Image class="tommy-photo" src={tommyPhoto} alt='Tommy photo' />
+  <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
 </div>
 
 <style define:vars={{ heroTextSize }}>
@@ -38,7 +38,6 @@ const heroTextSize = '140px';
     line-height: var(--heroTextSize);
     text-align: center;
     margin: 0;
-    animation: fadeInUp 1s ease-out forwards;
   }
 
   .tommy-photo {
@@ -46,6 +45,5 @@ const heroTextSize = '140px';
     object-fit: contain;
     object-position: 50% 50%;
     margin-top: 72px;
-    animation: fadeIn 1.5s ease-in forwards;
   }
 </style>
