@@ -23,6 +23,8 @@ const mainLinks = [
 
 <style>
   .main-links {
+    display: flex;
+    align-items: center;
     height: var(--header-height);
   }
 
@@ -41,7 +43,7 @@ const mainLinks = [
     width: 100%;
     transform: scaleX(0);
     height: 1px;
-    bottom: -6px;
+    bottom: 0;
     left: 0;
     background-color: white;
     transform-origin: bottom right;
@@ -55,7 +57,7 @@ const mainLinks = [
   }
 
   .main-links a:not(:first-child) {
-    margin-left: 40px;
+    margin-left: 30px;
   }
   .contact-button {
     background-color: var(--color-accent-secondary);

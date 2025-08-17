@@ -7,7 +7,7 @@ const heroTextSize = '140px';
 
 <div class='hero-container'>
   <div class='hero-text-container'>
-    <h1 class='hero-text fade-in'>TOMMY ZUGELL</h1>
+    <h1 class='hero-text fade-in-up'>TOMMY ZUGELL</h1>
   </div>
   <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
 </div>
@@ -17,6 +17,7 @@ const heroTextSize = '140px';
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
     position: relative;
     width: 100%;
     border-bottom: 1px solid var(--color-accent-primary);
@@ -24,7 +25,7 @@ const heroTextSize = '140px';
   
   .hero-text-container {
     position: absolute;
-    z-index: -1;
+    z-index: 0;
     top: 0;
     left: 50%;
     transform: translate(-50%, 0);
@@ -41,6 +42,8 @@ const heroTextSize = '140px';
   }
 
   .tommy-photo {
+    position: relative;
+    z-index: 1;
     display: block;
     object-fit: contain;
     object-position: 50% 50%;
