@@ -5,15 +5,16 @@ import tommyPhoto from '../assets/tommy-removebg-cropped.png';
 const heroTextSize = '140px';
 ---
 
-<div class='hero-container'>
+<section class='hero-section'>
   <div class='hero-text-container'>
     <h1 class='hero-text fade-in-up'>TOMMY ZUGELL</h1>
   </div>
   <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
-</div>
+</section>
 
 <style define:vars={{ heroTextSize }}>
-  .hero-container {
+  .hero-section {
+    height: 61.8%;
     display: flex;
     flex-direction: column;
     align-items: center;
