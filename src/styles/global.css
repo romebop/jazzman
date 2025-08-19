@@ -1,14 +1,8 @@
 :root {
-  --header-height: 80px;
+  --header-height: 120px;
   /* naming convention: --color-<category>-<variant> */
 
-  /* background colors */
   --color-background-base: #1a1a40;
-  
-  /* section background colors */
-  --color-background-section-light: #f5f5f5;
-  --color-background-section-mid: #eae0d5;
-  --color-background-section-dark: #c6ac8f;
 
   /* accent colors */
   --color-accent-primary: #e6b422; /* gold */
@@ -20,6 +14,12 @@
   
   /* other utility colors */
   /* --color-border-default: var(--color-accent-primary); */
+
+  /* animation variables */
+  --elastic-duration: 0.6s;
+  --elastic-timing: cubic-bezier(0.19, 1, 0.22, 1);
+  --slide-duration: 0.8s;
+  --slide-timing: cubic-bezier(0.19, 1, 0.22, 1); 
 
   scrollbar-gutter: stable;
 }
@@ -82,6 +82,7 @@ header {
 
 .initial-view {
   height: calc(100vh - var(--header-height));
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
@@ -161,10 +162,10 @@ header {
   }
 }
 
-@keyframes fadeInUp {
+@keyframes fadeUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(2vh);
   }
   to {
     opacity: 1;
@@ -172,28 +173,12 @@ header {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.fade-in {
+  animation: fadeIn 0.8s var(--slide-timing) forwards;
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(4rem);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.fade-in-up {
-  animation: fadeInUp 0.4s cubic-bezier(0.86, 0, 0.07, 1) forwards;
+.fade-up {
+  animation: fadeUp 0.8s var(--slide-timing) forwards;
 }
 
 @keyframes slide-in-from-right {

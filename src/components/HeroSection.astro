@@ -7,14 +7,14 @@ const heroTextSize = '140px';
 
 <section class='hero-section'>
   <div class='hero-text-container'>
-    <h1 class='hero-text fade-in-up'>TOMMY ZUGELL</h1>
+    <div class='hero-text fade-up'>TOMMY ZUGELL</div>
   </div>
   <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
 </section>
 
 <style define:vars={{ heroTextSize }}>
   .hero-section {
-    height: 61.8%;
+    height: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -27,10 +27,9 @@ const heroTextSize = '140px';
   .hero-text-container {
     position: absolute;
     z-index: 0;
-    top: 4%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, 0);
-    width: 100%;
   }
 
   .hero-text {
@@ -40,6 +39,8 @@ const heroTextSize = '140px';
     line-height: var(--heroTextSize);
     text-align: center;
     margin: 0;
+    font-weight: bold;
+    white-space: nowrap;
   }
 
   .tommy-photo {
@@ -48,5 +49,7 @@ const heroTextSize = '140px';
     display: block;
     object-fit: contain;
     object-position: 50% 50%;
+    max-width: 100%;
+    height: auto;
   }
 </style>
