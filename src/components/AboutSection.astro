@@ -1,19 +1,17 @@
 ---
 ---
 <section class='about-section'>
-  <p id='main-message' class='fade-in-up'>I'm Tommy Zugell, Omega Saxophoner and Jazzman 4 Lyfe.</p>
-  <p id='detail-message'>
+  <div id='main-message' class='fade-in-up'>I'm Tommy Zugell, Omega Saxophoner and Jazzman 4 Lyfe.</div>
+  <div id='detail-message' class='fade-in-up'>
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-  </p>
+  </div>
 </section>
 
 <style>
   .about-section {
     height: 38.2%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap: 20px;
+    display: flex;
+    flex-direction: column;
     padding: 80px 520px;
     color: var(--color-accent-primary);
   }
@@ -24,26 +22,16 @@
   }
 
   #main-message {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
     font-size: 32px;
     text-align: left;
-    align-self: end;
-    justify-self: center;
     margin: 0;
     font-weight: 600;
   }
 
   #detail-message {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
     font-size: 22px;
     max-width: 60ch;
     text-align: left;
-    align-self: start;
-    justify-self: center;
     margin: 0;
-    animation: fadeInUp 1s forwards;
-    animation-delay: 0.3s;
   }
 </style>
