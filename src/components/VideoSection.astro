@@ -1,18 +1,39 @@
 ---
 ---
 <section>
-  <video 
-    autoplay 
-    muted 
-    loop 
-    playsinline 
-    width='100%' 
-    style='width: 50%; object-fit: cover;'
-  >
-    <source src='/jam.mp4' type='video/mp4' />
-    Your browser does not support the video tag.
-  </video> 
+  <div style='position: relative; width: 50%;'>
+    <video 
+      id='jam-video'
+      autoplay 
+      muted 
+      loop 
+      playsinline 
+      width='100%' 
+      style='width: 100%; object-fit: cover;'
+    >
+      <source src='/jam.mp4' type='video/mp4' />
+      Your browser does not support the video tag.
+    </video> 
+    <button
+      id='mute-button'
+      style='position: absolute; bottom: 10px; right: 10px; z-index: 1; background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer;'
+    >
+      Unmute
+    </button>
+  </div>
 </section>
+
+<script>
+  const video = document.getElementById('jam-video') as HTMLVideoElement;
+  const muteButton = document.getElementById('mute-button');
+
+  if (video && muteButton) {
+    muteButton.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteButton.textContent = video.muted ? 'Unmute' : 'Mute';
+    });
+  }
+</script>
 
 <style>
   section {
