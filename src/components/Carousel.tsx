@@ -21,14 +21,14 @@ const Carousel = ({ images }: { images: string[] }) => {
       <div className={styles.imageWrapper}>
         <div
           className={styles.images}
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          style={{ transform: `translateX(calc(-${currentIndex * 75}% + 12.5%))` }}
         >
           {images.map((img, idx) => (
             <img
               key={idx}
               src={img}
               alt={`Slide ${idx + 1}`}
-              className={styles.image}
+              className={`${styles.image} ${idx === currentIndex ? styles.active : ''}`}
             />
           ))}
         </div>
