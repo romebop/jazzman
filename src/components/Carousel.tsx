@@ -69,7 +69,7 @@ const Carousel = ({ slides }: { slides: Slide[] }) => {
       <div className={styles.imagesWindow}>
         <div
           className={styles.images}
-          style={{ transform: `translateX(-${currIdx * 85}%)` }}
+          style={{ transform: `translateX(-${currIdx * 55}%)` }}
         >
           {slides.map((slide, idx) =>
             <div
@@ -78,11 +78,11 @@ const Carousel = ({ slides }: { slides: Slide[] }) => {
             >
               <img
                 src={slide.src}
-                alt={`Slide ${idx + 1}`}
                 className={styles.imageContent}
               />
             </div>
           )}
+          <div className={styles.endBox} />
         </div>
       </div>
       <div className={styles.textsWindow}>
