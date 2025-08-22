@@ -6,7 +6,7 @@ const pageTitle = 'Contact';
 
 <BaseLayout pageTitle={pageTitle}>
   <div class='contact-container'>
-    <h1>Join My Mailing List</h1>
+    <h1>Send Me a Message</h1>
     <form class='contact-form'>
       <div class='form-group'>
         <label for='email'>Email <span class='required'>(required)</span></label>
@@ -36,7 +36,7 @@ const pageTitle = 'Contact';
   }
 
   h1 {
-    font-family: 'Averia Serif Libre', serif;
+    font-family: 'Averia Serif Libre';
     font-style: italic;
     font-size: 48px;
     color: var(--color-accent-primary);
@@ -69,7 +69,7 @@ const pageTitle = 'Contact';
   }
 
   input {
-    background-color: white;
+    background-color: var(--color-app-white);
     border: none;
     padding: 12px;
     font-size: 16px;

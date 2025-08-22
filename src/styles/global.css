@@ -1,4 +1,5 @@
 :root {
+  --tommy-zugell-width: 1132px;
   --header-height: 120px;
   /* naming convention: --color-<category>-<variant> */
 
@@ -8,13 +9,8 @@
   --color-accent-primary: #e6b422; /* gold */
   --color-accent-secondary: #e66a22; /* coral */
 
-  /* text colors */
-  --color-text-body: #fff8e1; /* warm off-white for body text */
-  --color-text-inverse: var(--color-background-base); /* for text on light backgrounds */
+  --color-app-white: #fff8e1; /* warm off-white */
   
-  /* other utility colors */
-  /* --color-border-default: var(--color-accent-primary); */
-
   /* animation variables */
   --elastic-duration: 0.6s;
   --elastic-timing: cubic-bezier(0.19, 1, 0.22, 1);
@@ -35,8 +31,14 @@
 }
 
 body {
+  color: var(--color-app-white);
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  font-family: 'Bitter';
+  background-color: var(--color-background-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 img, picture, video, canvas, svg {
@@ -65,15 +67,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* site styles */
-
-body {
-  font-family: 'Bitter';
-  background-color: var(--color-background-base);
-  color: var(--color-text-body);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
 
 header {
   display: flex;

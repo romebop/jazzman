@@ -1,16 +1,49 @@
 
 .carouselContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 100%;
+  
+  --shift-duration: 1.2s;
+  --effect-duration: 1.4s;
+  --effect-delay: 150ms;
+
+  width: var(--tommy-zugell-width);
   overflow: hidden;
 }
 
-.imageWrapper {
+/* numbers */
+
+.numbersWindow {
+  overflow: hidden;
+  width: 150px;
+}
+
+.numbers {
+  display: flex;
+  align-items: center;
+  transition: transform var(--shift-duration) var(--elastic-timing);
+}
+
+.number {
+  font-size: 120px;
+  font-weight: bold;
+  width: 130px;
+  opacity: 0.4;
+  flex-shrink: 0;
+  transform: scale(0.6);
+  transition: transform var(--effect-duration) var(--elastic-timing) var(--effect-delay);
+}
+
+.number:not(:first-child) {
+  margin-left: 40px;
+}
+
+.number.active {
+  transform: scale(1);
+}
+
+/* images */
+
+.imagesWindow {
   width: 100%;
-  aspect-ratio: 3 / 2;
   position: relative;
 }
 
@@ -18,79 +51,131 @@
   display: flex;
   height: 100%;
   align-items: center;
-  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: transform var(--shift-duration) var(--elastic-timing);
 }
 
-.image {
-  width: 60%; /* smaller width for the images */
-  height: auto;
-  object-fit: cover;
+.imageContainer {
+  width: 80%;
   flex-shrink: 0;
-  margin: 0 20%; /* create space between images */
-  transform: scale(0.8);
-  opacity: 0.5;
-  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1), opacity 0.5s cubic-bezier(0.77, 0, 0.175, 1);
-  border-radius: 10px;
+  opacity: 0.2;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  transition: opacity var(--effect-duration) var(--elastic-timing) var(--effect-delay);
 }
 
-.image.active {
-  transform: scale(1);
+.imageContainer:not(:first-child) {
+  margin-left: 5%;
+}
+
+.imageContainer.active {
   opacity: 1;
 }
 
-.buttons {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.imageContent {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--effect-duration) var(--elastic-timing) var(--effect-delay);
+  transform: scale(1);
+}
+
+.imageContainer.active .imageContent {
+  transform: scale(1.1);
+}
+
+/* texts */
+
+.textsWindow {
+  overflow: hidden;
+  width: 400px;
+  height: 150px;
+}
+
+.texts {
   display: flex;
-  justify-content: space-between;
-  pointer-events: none;
+  flex-direction: column;
+  transition: transform var(--shift-duration) var(--elastic-timing);
 }
 
-.button {
-  pointer-events: all;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  border: none;
-  padding: 16px;
-  font-size: 24px;
-  transition: background-color 0.3s ease;
-}
-
-.button:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-.prevButton {
-  margin-left: 10px;
-  border-radius: 0 3px 3px 0;
-}
-
-.nextButton {
-  margin-right: 10px;
-  border-radius: 3px 0 0 3px;
-}
-
-.dots {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  margin: 0 5px;
-  border-radius: 50%;
-  border: none;
-  background: gray;
-  cursor: pointer;
-  padding: 0;
+.text {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: normal;
+  width: 400px;
+  height: 180px;
   flex-shrink: 0;
+  opacity: 0.2;
+  transition: opacity var(--effect-duration) var(--slide-timing) var(--effect-delay);
 }
 
-.dot.active {
-  background: black;
+.text:not(:first-child) {
+  margin-top: 20px;
+}
+
+.text.active {
+  opacity: 1;
+}
+
+/* dates */
+
+.datesWindow {
+  overflow: hidden;
+  width: 120px;
+  height: 40px;
+  /* border: 1px solid pink; */
+}
+
+.dates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: transform var(--shift-duration) var(--elastic-timing);
+}
+
+.date {
+  display: inline-block;
+  height: 38px;
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  opacity: 0.8;
+}
+
+.date::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-app-white);
+  width: 100%;
+}
+
+.date:not(:first-child) {
+  margin-top: 40px;
+}
+
+/* indicators */
+
+.indicators {
+  display: flex;
+  margin-top: 40px;
+}
+
+.indicator {
+  width: 50px;
+  height: 4px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  background-color: var(--color-accent-primary);
+  opacity: 0.2;
+  transition: opacity 0.5s ease;
+}
+
+.indicator:not(:first-child) {
+  margin-left: 12px;
+}
+
+.indicator.active {
+  opacity: 1;
 }

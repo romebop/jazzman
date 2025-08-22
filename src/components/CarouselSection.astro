@@ -6,16 +6,16 @@ import photo2 from '../assets/photo2.jpg';
 import photo3 from '../assets/photo3.jpg';
 import photo4 from '../assets/photo4.jpg';
 
-const images = [
-  photo1.src,
-  photo2.src,
-  photo3.src,
-  photo4.src,
+const slides = [
+  { src: photo1.src, text: 'July 4th Improv Jam', date: new Date(2024, 6, 5) },
+  { src: photo2.src, text: 'Jazz at Le Piano', date: new Date(2024, 10, 4) },
+  { src: photo3.src, text: 'Friends on the Rooftop', date: new Date(2023, 10, 18) },
+  { src: photo4.src, text: 'Chillin after Jimjilbang', date: new Date(2023, 10, 17) },
 ];
 
 ---
 <section>
-  <Carousel client:only='react' images={images} />
+  <Carousel client:only='react' slides={slides} />
 </section>
 
 <style>
