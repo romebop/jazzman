@@ -24,5 +24,6 @@ pnpm-debug.log*
 .idea/
 
 .roo/
+.vscode/
 
 todo.txt
