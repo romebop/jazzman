@@ -33,7 +33,8 @@
 .number {
   font-size: 120px;
   font-weight: bold;
-  opacity: 0.2;
+  color: var(--color-accent-secondary);
+  opacity: 0.8;
   width: 130px;
   flex-shrink: 0;
   transform: scale(0.6);
