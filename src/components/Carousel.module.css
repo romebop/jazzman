@@ -204,4 +204,5 @@
   margin-left: 3%;
   background-color: var(--color-accent-secondary);
   flex-shrink: 0;
+  opacity: 0.8;
 }
