@@ -20,21 +20,26 @@ const quotes: Quote[] = [
   },
   {
     text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    author: 'Cicero',
+    author: 'Muhammad',
   },
   {
     text: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
-    author: 'Publilius Syrus',
+    author: 'Jesus',
   },
   {
     text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-    author: 'Seneca',
+    author: 'Saerom',
+  },
+  {
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    author: 'Giraffe',
   },
 ];
 
 ---
 
 <section class='quotes-section'>
+  <div class='header'>What Tommy's Friends are Saying:</div>
   <div class='quotes-container'>
     {quotes.map((quote: Quote) =>
       <div class='quote-container'>
@@ -50,14 +55,22 @@ const quotes: Quote[] = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 60px;
     width: 100%;
     background-color: var(--color-background-secondary);
+    padding-top: 80px;
+  }
+
+  .header {
+    font-size: 22px;
+    width: var(--tommy-zugell-width);
+    color: var(--color-accent-primary);
+    font-family: 'Averia Serif Libre';
   }
 
   .quotes-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     width: var(--tommy-zugell-width);
     margin-top: 40px;
   }
@@ -65,50 +78,44 @@ const quotes: Quote[] = [
   .quote-container {
     display: flex;
     flex-direction: column;
-    width: 60%;
+    justify-content: space-between;
     opacity: 0;
     background-color: #fff8e10f;
     padding: 24px 44px;
     border-radius: 8px;
   }
 
-  .quote-container:nth-child(even) {
-    align-self: flex-end;
-  }
-
-  .quote-container:not(:first-child) {
-    margin-top: 20px;
-  }
-
   .quote-text {
-    font-size: 20px;
+    font-size: 18px;
     margin-bottom: 6px;
   }
 
   .quote-author {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 600;
     margin-top: 4px;
   }
 
-  /* staggered animation */
   .quotes-section.is-visible .quote-container:nth-child(1) {
     animation: fadeUp 1s forwards;
   }
   .quotes-section.is-visible .quote-container:nth-child(2) {
-    animation: fadeUp 1s forwards 0.3s;
+    animation: fadeUp 1s forwards 0.1s;
   }
   .quotes-section.is-visible .quote-container:nth-child(3) {
-    animation: fadeUp 1s forwards 0.6s;
+    animation: fadeUp 1s forwards 0.2s;
   }
   .quotes-section.is-visible .quote-container:nth-child(4) {
     animation: fadeUp 1s forwards;
   }
   .quotes-section.is-visible .quote-container:nth-child(5) {
-    animation: fadeUp 1s forwards 0.3s;
+    animation: fadeUp 1s forwards 0.1s;
   }
   .quotes-section.is-visible .quote-container:nth-child(6) {
-    animation: fadeUp 1s forwards 0.6s;
+    animation: fadeUp 1s forwards 0.3s;
+  }
+  .quotes-section.is-visible .quote-container:nth-child(7) {
+    animation: fadeUp 1s forwards 0.4s;
   }
 </style>
 
