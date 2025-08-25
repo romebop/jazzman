@@ -118,6 +118,7 @@
   line-height: normal;
   width: 400px;
   height: 180px;
+  text-wrap: balance;
   flex-shrink: 0;
   opacity: 0.2;
   transition: opacity var(--effect-duration) var(--slide-timing) var(--effect-delay);
@@ -205,5 +206,5 @@
   margin-left: 3%;
   background-color: var(--color-accent-secondary);
   flex-shrink: 0;
-  opacity: 0.8;
+  opacity: 0.6;
 }

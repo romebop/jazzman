@@ -4,48 +4,56 @@
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 100;
   src: url('/fonts/bitter-100.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 200;
   src: url('/fonts/bitter-200.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 300;
   src: url('/fonts/bitter-300.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 400;
   src: url('/fonts/bitter-regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 500;
   src: url('/fonts/bitter-500.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 600;
   src: url('/fonts/bitter-600.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
   src: url('/fonts/bitter-700.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Bitter';
   font-style: normal;
+  font-display: swap;
   font-weight: 800;
   src: url('/fonts/bitter-800.woff2') format('woff2');
 }
@@ -54,18 +62,21 @@
 @font-face {
   font-family: 'Averia Serif Libre';
   font-style: normal;
+  font-display: swap;
   font-weight: 300;
   src: url('/fonts/averia-serif-libre-300.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Averia Serif Libre';
   font-style: normal;
+  font-display: swap;
   font-weight: 400;
   src: url('/fonts/averia-serif-libre-regular.woff2') format('woff2');
 }
 @font-face {
   font-family: 'Averia Serif Libre';
   font-style: normal;
+  font-display: swap;
   font-weight: 700;
   src: url('/fonts/averia-serif-libre-700.woff2') format('woff2');
 }
@@ -73,15 +84,15 @@
 :root {
   --tommy-zugell-width: 1132px;
   --header-height: 120px;
-  /* naming convention: --color-<category>-<variant> */
 
-  --color-background-base: #1a1a40;
+  --color-background-primary: #1a1a40;
+  --color-background-secondary: #00000040;
 
   /* accent colors */
-  --color-accent-primary: #e6b422; /* gold */
-  --color-accent-secondary: #e66a22; /* coral */
+  --color-accent-primary: #e6b422;
+  --color-accent-secondary: #e66a22;
 
-  --color-app-white: #fff8e1; /* warm off-white */
+  --color-app-white: #fff8e1;
   
   /* animation variables */
   --elastic-duration: 0.6s;
@@ -104,10 +115,10 @@
 
 body {
   color: var(--color-app-white);
-  line-height: 1.5;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  font-family: 'Bitter';
-  background-color: var(--color-background-base);
+  font-family: 'Bitter', serif;
+  background-color: var(--color-background-primary);
   display: flex;
   flex-direction: column;
   align-items: center;
