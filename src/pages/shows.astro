@@ -5,16 +5,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = 'Shows - Tommy Zugell';
 
 const shows = [
-  { month: 'JUL', day: '12', location: 'Pittsburgh, PA', details: '[Early Show]' },
-  { month: 'JUL', day: '13', location: 'Columbus, OH', details: '' },
-  { month: 'JUL', day: '14', location: 'Cleveland, OH', details: '[Late Show]' },
-  { month: 'AUG', day: '01', location: 'New York, NY', details: '' },
-  { month: 'AUG', day: '02', location: 'Boston, MA', details: '' },
-  { month: 'AUG', day: '03', location: 'Philadelphia, PA', details: '[Sold Out]' },
-  { month: 'SEP', day: '15', location: 'Chicago, IL', details: '' },
-  { month: 'SEP', day: '16', location: 'Chicago, IL', details: '[Late Show]' },
-  { month: 'OCT', day: '10', location: 'Nashville, TN', details: '' },
-  { month: 'OCT', day: '11', location: 'Atlanta, GA', details: '' },
+  { date: new Date(2025, 6, 12), location: 'Pittsburgh, PA', details: '[Early Show]' },
+  { date: new Date(2025, 6, 13), location: 'Columbus, OH', details: '' },
+  { date: new Date(2025, 6, 14), location: 'Cleveland, OH', details: '[Late Show]' },
+  { date: new Date(2025, 7, 1), location: 'New York, NY', details: '' },
+  { date: new Date(2025, 7, 2), location: 'Boston, MA', details: '' },
+  { date: new Date(2025, 7, 3), location: 'Philadelphia, PA', details: '[Sold Out]' },
+  { date: new Date(2025, 8, 15), location: 'Chicago, IL', details: '' },
+  { date: new Date(2025, 8, 16), location: 'Chicago, IL', details: '[Late Show]' },
+  { date: new Date(2025, 9, 10), location: 'Nashville, TN', details: '' },
+  { date: new Date(2025, 9, 11), location: 'Atlanta, GA', details: '' },
 ];
 ---
 
@@ -24,8 +24,8 @@ const shows = [
     {shows.map(show => (
       <div class='show-row'>
         <div class='show-date'>
-          <span>{show.month}</span>
-          <span>{show.day}</span>
+          <span>{show.date.toLocaleString('en-US', { month: 'short' }).toUpperCase()}</span>
+          <span>{String(show.date.getDate()).padStart(2, '0')}</span>
         </div>
         <div class='show-info'>
           <div class='show-location'>{show.location}</div>

@@ -1,5 +1,4 @@
 ---
-
 import Carousel from '../components/Carousel';
 import photo1 from '../assets/photo1.jpg';
 import photo2 from '../assets/photo2.jpg';
@@ -12,8 +11,8 @@ const slides = [
   { src: photo3.src, text: 'Friends on the Rooftop', date: new Date(2023, 10, 18) },
   { src: photo4.src, text: 'Chillin after Jimjilbang', date: new Date(2023, 10, 17) },
 ];
-
 ---
+
 <section>
   <Carousel client:idle slides={slides} />
 </section>
