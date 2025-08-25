@@ -31,6 +31,7 @@ const shows = [
           <div class='show-location'>{show.location}</div>
           <div class='show-details'>{show.details}</div>
         </div>
+        <button>More Info</button> 
       </div>
     ))}
   </div>
@@ -40,22 +41,26 @@ const shows = [
   h1 {
     text-align: center;
     color: var(--color-accent-primary);
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: 48px;
+    font-family: 'Averia Serif Libre';
+    margin-top: 60px;
   }
 
   .shows-container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 2rem;
+    width: 920px;
+    padding: 40px;
+    margin-bottom: 60px;
   }
 
   .show-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 0;
-    border-bottom: 1px solid rgba(255, 248, 225, 0.2);
+    padding: 20px 0;
+  }
+
+  .show-row:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 248, 225, 0.2);
   }
 
   .show-date {
@@ -68,19 +73,36 @@ const shows = [
   }
 
   .show-date span:last-child {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 500;
   }
 
   .show-info {
     display: flex;
     align-items: baseline;
     flex-grow: 1;
-    margin-left: 4rem;
+    margin-left: 60px;
   }
 
   .show-details {
-    margin-left: 0.5rem;
+    margin-left: 10px;
     color: rgba(255, 248, 225, 0.7);
+  }
+
+  button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: transparent;
+    color: var(--color-app-white);
+    border: 1px solid var(--color-app-white);
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    opacity: 0.4;
+    transition: opacity var(--elastic-duration) var(--elastic-timing);
+  }
+
+  button:hover {
+    opacity: 1;
   }
 </style>
