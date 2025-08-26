@@ -9,7 +9,7 @@ const pageTitle = 'Contact';
     
     <h1>Contact & Booking</h1>
     
-    <form name='contact' method='POST' data-netlify='true' class='contact-form'>
+    <form name='tommy-contact-form' method='POST' data-netlify='true' class='contact-form'>
 
       <div class='form-group'>
         <label for='name'>Name<span class='asterisk'>*</span></label>
@@ -131,6 +131,12 @@ const pageTitle = 'Contact';
 
   input[type='date'] {
     position: relative;
+    color: #999;
+  }
+
+  input[type='date']:focus,
+  input[type='date']:valid {
+    color: #333;
   }
 
   fieldset {
