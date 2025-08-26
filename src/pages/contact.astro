@@ -35,7 +35,7 @@ const pageTitle = 'Contact';
 
       <fieldset id='message-fields'>
         <div class='form-group'>
-          <label for='message'>Send me a Question or Message<span class='asterisk'>*</span></label>
+          <label for='message'>Question or Message<span class='asterisk'>*</span></label>
           <textarea id='message' name='message' rows='5' required></textarea>
         </div>
       </fieldset>     
@@ -113,7 +113,6 @@ const pageTitle = 'Contact';
   }
 
   label {
-    color: var(--color-accent-primary);
     margin-bottom: 8px;
     font-size: 16px;
   }
@@ -143,7 +142,7 @@ const pageTitle = 'Contact';
     gap: 20px;
   }
 
-  #booking-fields, .radio-group {
+  #message-fields, #booking-fields {
     border-top: 1px solid rgba(255, 248, 225, 0.2);
     padding-top: 20px;
   }
@@ -151,8 +150,6 @@ const pageTitle = 'Contact';
   legend {
     padding: 0 10px;
     margin-left: -10px;
-    color: var(--color-accent-primary);
-    font-weight: bold;
   }
 
   button[type='submit'] {
@@ -177,8 +174,8 @@ const pageTitle = 'Contact';
   button[type='submit']:disabled {
     background-color: #cccccc;
     color: #666666;
-    cursor: not-allowed;
     filter: none;
+    cursor: unset;
   }
 
   .radio-group {
@@ -193,8 +190,6 @@ const pageTitle = 'Contact';
   .radio-group legend {
     padding: 0;
     margin: 0 0 8px 0;
-    color: var(--color-accent-primary);
-    font-weight: normal;
   }
 
   .radio-option {
@@ -317,7 +312,7 @@ const pageTitle = 'Contact';
         && locationInput.checkValidity();
 
     }
-        
+
     submitButton.disabled = !isFormValid;
   }
 
