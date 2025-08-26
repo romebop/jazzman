@@ -7,20 +7,30 @@ const pageTitle = 'Contact';
 <BaseLayout pageTitle={pageTitle}>
   <div class='contact-container'>
     <h1>Send Me a Message</h1>
-    <form class='contact-form'>
+    
+    <form name='tommy-contact-form' method='POST' data-netlify='true' class='contact-form'>
+      
+      <div class='form-group'>
+        <label for='name'>Name <span class='required'>(required)</span></label>
+        <input type='text' id='name' name='name' required />
+      </div>
+      
       <div class='form-group'>
         <label for='email'>Email <span class='required'>(required)</span></label>
         <input type='email' id='email' name='email' required />
       </div>
+      
       <div class='form-group'>
-        <label for='city'>City <span class='required'>(required)</span></label>
-        <input type='text' id='city' name='city' required />
+        <label for='message'>Message <span class='required'>(required)</span></label>
+        <textarea id='message' name='message' rows='5' required></textarea>
       </div>
-      <div class='form-group'>
-        <label for='state'>State <span class='required'>(required)</span></label>
-        <input type='text' id='state' name='state' required />
-      </div>
+
+      <p class='hidden' style='display:none;'>
+        <label>Don’t fill this out if you're human: <input name='bot-field' /></label>
+      </p>
+      
       <button type='submit'>Submit</button>
+      
     </form>
   </div>
 </BaseLayout>
@@ -68,12 +78,14 @@ const pageTitle = 'Contact';
     font-weight: normal;
   }
 
-  input {
+  input,
+  textarea {
     background-color: var(--color-app-white);
     border: none;
     padding: 12px;
     font-size: 16px;
     border-radius: 2px;
+    font-family: inherit;
   }
 
   button[type='submit'] {
