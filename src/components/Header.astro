@@ -1,11 +1,209 @@
 ---
-import Hamburger from './Hamburger.astro';
-import Navigation from './Navigation.astro';
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/shows', label: 'Shows' },
+  { href: '/weddings', label: 'Weddings' },
+  { href: '/contact', label: 'Contact' },
+];
 ---
 
 <header>
-  <nav>
-    <Hamburger />
-    <Navigation />
+
+  <nav class='desktop-links'>
+    {links.map((link, _) =>
+      <a
+        href={link.href}
+        class:list={[
+          { active: Astro.url.pathname === link.href },
+          { 'contact-button': link.label === 'Contact' },
+        ]}
+      >{link.label}</a>
+    )}
   </nav>
+
+  <button class='hamburger'>
+    <span class='line'></span>
+    <span class='line'></span>
+    <span class='line'></span>
+  </button>
+
+  <nav class='mobile-links'>
+    {links.map((link, _) =>
+      <a
+        href={link.href}
+        class:list={[
+          { active: Astro.url.pathname === link.href },
+          { 'contact-link': link.label === 'Contact' },
+        ]}
+      >{link.label}</a>
+    )}
+  </nav>
+
 </header>
+
+<style>
+  .desktop-links {
+    display: none;
+    align-items: center;
+    height: var(--header-height);
+  }
+
+  .desktop-links a:not(.contact-button) {
+    color: var(--color-app-white);
+    text-decoration: none;
+    text-transform: none;
+    font-size: 16px;
+    font-weight: normal;
+    position: relative;
+  }
+
+  .desktop-links a:not(.contact-button)::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-app-white);
+    transform-origin: bottom right;
+    transition: transform var(--elastic-duration) var(--elastic-timing);
+  }
+
+  .desktop-links a:not(.contact-button):hover::after,
+  .desktop-links a:not(.contact-button).active::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .desktop-links a:not(:first-child) {
+    margin-left: 40px;
+  }
+
+  .desktop-links .contact-button {
+    border: 2px solid var(--color-accent-secondary);
+    padding: 4px 12px;
+    border-radius: 4px;
+    color: var(--color-app-white);
+    text-decoration: none;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+
+  .desktop-links .contact-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent-secondary);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform var(--elastic-duration) var(--elastic-timing);
+    z-index: -1;
+  }
+
+  .desktop-links .contact-button:hover::before,
+  .desktop-links .contact-button.active::before {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  .hamburger {
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    position: relative;
+    z-index: 101;
+    width: 40px;
+    height: 35px;
+  }
+
+  .hamburger .line {
+    display: block;
+    width: 40px;
+    height: 5px;
+    margin-bottom: 10px;
+    background-color: var(--color-app-white);
+    transition: transform 0.3s var(--elastic-timing), opacity 0.3s var(--elastic-timing);
+    transform-origin: center;
+  }
+
+  .hamburger .line:last-child {
+    margin-bottom: 0;
+  }
+
+  .hamburger.is-open .line:nth-child(1) {
+    transform: translateY(15px) rotate(45deg);
+  }
+
+  .hamburger.is-open .line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.is-open .line:nth-child(3) {
+    transform: translateY(-15px) rotate(-45deg);
+  }
+
+  .mobile-links {
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--color-background-primary);
+    transition: opacity 0.3s var(--elastic-timing), visibility 0.3s var(--elastic-timing);
+  }
+
+  .mobile-links.is-open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .mobile-links a {
+    color: white;
+    text-decoration: none;
+    fonts-size: 2rem;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: none;
+    animation: fadeUp var(--slide-duration) var(--slide-timing);
+  }
+
+  .mobile-links.is-open a {
+    display: unset;
+  }
+
+  @media (min-width: 768px) {
+    .desktop-links {
+      display: flex;
+    }
+
+    .hamburger {
+      display: none;
+    }
+  }
+</style>
+
+<script is:inline>
+
+  const hamburger = document.querySelector('.hamburger');
+  const mobileLinks = document.querySelector('.mobile-links');
+  
+  hamburger.addEventListener('click', () => {
+    mobileLinks.classList.toggle('is-open');
+    hamburger.classList.toggle('is-open');
+  });
+
+</script>
