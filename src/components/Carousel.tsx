@@ -5,6 +5,8 @@ interface Slide {
   src: string;
   text: string;
   date: Date;
+  x: number;
+  y: number;
 }
 
 const Carousel = ({ slides }: { slides: Slide[] }) => {
@@ -23,7 +25,7 @@ const Carousel = ({ slides }: { slides: Slide[] }) => {
         }
         return prevIdx + direction.current;
       });
-    }, 2000);
+    }, 4000);
     return () => clearInterval(Id); 
   }, [slides.length]);
 
@@ -79,6 +81,7 @@ const Carousel = ({ slides }: { slides: Slide[] }) => {
               <img
                 src={slide.src}
                 className={styles.imageContent}
+                style={{ objectPosition: `${slide.x}% ${slide.y}%` }}
               />
             </div>
           )}
@@ -116,6 +119,7 @@ const Carousel = ({ slides }: { slides: Slide[] }) => {
           <div
             key={idx}
             className={`${styles.indicator} ${idx === currIdx ? styles.active : ''}`}
+            onClick={() => goToSlide(idx)}
           />
         )}
       </div>

@@ -4,18 +4,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroSection from '../components/HeroSection.astro';
 import AboutSection from '../components/AboutSection.astro';
 import CarouselSection from '../components/CarouselSection.astro';
-import QuotesSection from '../components/QuotesSection.astro';
+import ContactSection from '../components/ContactSection.astro';
 
 const pageTitle = 'Tommy Zugell';
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <div class='initial-view'>
-    <HeroSection />
-    <AboutSection />
-  </div>
+  <HeroSection />
+  <AboutSection />
   <CarouselSection />
-  <QuotesSection />
+  <ContactSection />
 </BaseLayout>
 
 

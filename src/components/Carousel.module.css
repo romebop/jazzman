@@ -5,7 +5,7 @@
   --effect-duration: 1.4s;
   --effect-delay: 150ms;
 
-  width: var(--tommy-zugell-width);
+  width: var(--tommy-sax-guy-width);
   /* overflow: hidden; */
   position: relative;
 }
@@ -181,12 +181,13 @@
 
 .indicator {
   width: 50px;
-  height: 4px;
+  height: 6px;
   border-radius: 2px;
   flex-shrink: 0;
   background-color: var(--color-accent-secondary);
   opacity: 0.2;
   transition: opacity 0.5s ease;
+  cursor: pointer;
 }
 
 .indicator:not(:first-child) {

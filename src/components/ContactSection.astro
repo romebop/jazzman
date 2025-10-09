@@ -1,0 +1,331 @@
+---
+---
+
+<section class='contact-section'>
+  
+  <h1>Contact & Booking</h1>
+  
+  <form name='tommy-contact-form' method='POST' data-netlify='true' action='/thanks' class='contact-form'>
+
+    <div class='form-group'>
+      <label for='name'>Name<span class='asterisk'>*</span></label>
+      <input type='text' id='name' name='name' required />
+    </div>
+    
+    <div class='form-group'>
+      <label for='email'>Email<span class='asterisk'>*</span></label>
+      <input type='email' id='email' name='email' required />
+    </div>
+
+    <fieldset class='radio-group'>
+      <legend>How can I help?</legend>
+      <div class='radio-option'>
+        <input type='radio' id='general' name='inquiry-type' value='Question / Message' checked>
+        <label for='general'>Question / Message</label>
+      </div>
+      <div class='radio-option'>
+        <input type='radio' id='booking' name='inquiry-type' value='Booking Inquiry'>
+        <label for='booking'>Booking Inquiry</label>
+      </div>
+    </fieldset>
+
+    <fieldset id='message-fields'>
+      <div class='form-group'>
+        <label for='message'>Question or Message<span class='asterisk'>*</span></label>
+        <textarea id='message' name='message' rows='5' required></textarea>
+      </div>
+    </fieldset>     
+
+    <fieldset id='booking-fields'>
+      <div class='form-group'>
+        <label for='event-date'>Date of Event<span class='asterisk'>*</span></label>
+        <input type='date' id='event-date' name='event-date' required />
+      </div>
+      
+      <div class='form-group'>
+        <label for='event-type'>Type of Event<span class='asterisk'>*</span></label>
+        <input type='text' id='event-type' name='event-type' required />
+      </div>
+
+      <div class='form-group'>
+        <label for='location'>Venue / Location<span class='asterisk'>*</span></label>
+        <input type='text' id='location' name='location' required />
+      </div>
+
+      <div class='form-group'>
+        <label for='details'>Additional Details</label>
+        <textarea id='details' name='details' rows='5'></textarea>
+      </div>
+    </fieldset>      
+
+    <p class='hidden' style='display:none;'>
+      <label>Don’t fill this out if you're human: <input name='bot-field' /></label>
+    </p>
+    
+    <button type='submit'>Send</button>
+    
+  </form>
+
+</section>
+
+<style>
+  .contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding-bottom: 100px;
+    background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%239C92AC' fill-opacity='0.04' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
+
+  h1 {
+    font-family: 'Averia Serif Libre', serif;
+    color: var(--color-accent-primary);
+    font-size: 48px;
+    margin-top: 60px;
+    margin-bottom: 20px;
+  }
+
+  .contact-form {
+    width: 100%;
+    border: 1px solid var(--color-app-white);
+    padding: 60px 80px;
+    box-sizing: content-box;
+    border-radius: 4px;
+    max-width: 440px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--color-background-primary);
+  }
+
+  .asterisk {
+    color: var(--color-accent-primary);
+    font-weight: bold;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  label,
+  legend {
+    color: var(--color-accent-primary);
+  }
+
+  label {
+    margin-bottom: 8px;
+    font-size: 16px;
+  }
+
+  input,
+  textarea,
+  select {
+    background-color: var(--color-app-white);
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 2px;
+    font-family: inherit;
+    color: #333;
+  }
+
+  input[type='date'] {
+    position: relative;
+    color: #aaa;
+  }
+
+  input[type='date']:focus,
+  input[type='date']:valid {
+    color: #333;
+  }
+
+  fieldset {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #message-fields, #booking-fields {
+    border-top: 1px solid rgba(255, 248, 225, 0.2);
+    padding-top: 20px;
+  }
+
+  legend {
+    padding: 0 10px;
+    margin-left: -10px;
+  }
+
+  button[type='submit'] {
+    color: var(--color-accent-secondary);
+    border: 1px solid transparent;
+    padding: 2px 24px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 20px;
+    transition: all var(--elastic-duration) var(--elastic-timing);
+    border-bottom: 1px solid var(--color-accent-secondary);
+    background: none;
+  }
+
+  button[type='submit']:hover {
+    color: #fff;
+    background-color: var(--color-accent-secondary);
+    border-radius: 2px;
+    border-bottom: 1px solid transparent;
+  }
+
+  button[type='submit']:disabled {
+    color: #666666;
+    border-bottom: 1px solid #666666;
+    cursor: unset;
+    background: none;
+  }
+
+  .radio-group {
+    border: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .radio-group legend {
+    padding: 0;
+    margin: 0 0 8px 0;
+  }
+
+  .radio-option {
+    display: flex;
+    flex: 1;
+  }
+
+  .radio-option input[type='radio'] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .radio-option label {
+    flex-grow: 1;
+    text-align: center;
+    display: inline-block;
+    padding: 8px 12px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 0;
+    color: var(--color-accent-secondary);
+    background-color: transparent;
+  }
+
+  .radio-option input[type='radio']:checked + label {
+    background-color: var(--color-accent-secondary);
+    color: #fff;
+    text-decoration: none;
+  }
+</style>
+
+<script is:inline>
+
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+
+  const messageFields = document.getElementById('message-fields');
+  const messageTextarea = document.getElementById('message');
+
+  const bookingFields = document.getElementById('booking-fields');
+  const eventDateInput = document.getElementById('event-date');
+  const eventTypeInput = document.getElementById('event-type');
+  const locationInput = document.getElementById('location');
+  const detailsInput = document.getElementById('details');
+  
+  const inquiryRadios = document.querySelectorAll('input[name="inquiry-type"]');
+  const submitButton = document.querySelector('button[type="submit"]');
+
+  function toggleFieldSet() {
+    
+    const selectedValue = document.querySelector('input[name="inquiry-type"]:checked').value;
+    
+    if (selectedValue === 'Question / Message') {
+      
+      messageFields.style.display = 'flex';
+      messageTextarea.disabled = false;
+
+      bookingFields.style.display = 'none';
+      eventDateInput.disabled = true;
+      eventTypeInput.disabled = true;
+      locationInput.disabled = true;
+      detailsInput.disabled = true;
+      
+    } else {
+      
+      messageFields.style.display = 'none';
+      messageTextarea.disabled = true;
+      
+      bookingFields.style.display = 'flex';
+      eventDateInput.disabled = false;
+      eventTypeInput.disabled = false;
+      locationInput.disabled = false;
+      detailsInput.disabled = false;
+
+    }
+
+    validateForm();
+
+  }
+
+  toggleFieldSet();
+
+  inquiryRadios.forEach(radio => {
+    radio.addEventListener('change', toggleFieldSet);
+  });
+
+  const inputsToValidate = [
+    nameInput,
+    emailInput,
+    messageTextarea,
+    eventDateInput,
+    eventTypeInput,
+    locationInput,
+  ];
+  inputsToValidate.forEach(input => {
+    input.addEventListener('input', validateForm);
+  });
+
+  function validateForm() {
+
+    const selectedValue = document.querySelector('input[name="inquiry-type"]:checked').value;
+    
+    let isFormValid = false;
+
+    if (selectedValue === 'Question / Message') {
+
+      isFormValid = nameInput.checkValidity()
+        && emailInput.checkValidity()
+        && messageTextarea.checkValidity();
+
+    } else {
+
+      isFormValid = nameInput.checkValidity()
+        && emailInput.checkValidity()
+        && eventDateInput.checkValidity()
+        && eventTypeInput.checkValidity()
+        && locationInput.checkValidity();
+
+    }
+
+    submitButton.disabled = !isFormValid;
+  }
+
+</script>
