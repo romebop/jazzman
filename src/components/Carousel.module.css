@@ -5,7 +5,7 @@
   --effect-duration: 1.4s;
   --effect-delay: 150ms;
 
-  width: var(--tommy-sax-guy-width);
+  width: var(--hero-text-width);
   /* overflow: hidden; */
   position: relative;
 }

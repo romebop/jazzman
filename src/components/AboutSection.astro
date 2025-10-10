@@ -1,20 +1,13 @@
 <section>
-  <div id="wrapper">
-    <div id="main-messages-container">
-      <div id="stagger-one" class='main-message fade-up'>
-        Hey I'm Tommy Zugell, Omega Saxophoner and Jazzman 4 Lyfe. I'm currently living in Chicago!
-      </div>
+  <div id='container'>
+    <div id='stagger-one' class='message fade-up'>
+      <strong>Tommy</strong> is a professional saxophonist based in <strong>Chicago</strong>, with years of experience performing at <strong>weddings</strong>, <strong>private events</strong>, <strong>jazz gigs</strong>, and more. Whether it’s jazz standards, pop hits, R&B, or classic tunes, he brings a thoughtful approach to every performance.
     </div>
-    <div id="detail-messages-container">
-      <div id="stagger-two" class='detail-message fade-up'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-      </div>
-      <div id="stagger-three" class='detail-message fade-up'>
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div id="stagger-four" class='detail-message fade-up'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      </div>
+    <div id='stagger-two' class='message fade-up'>
+      He’s played countless events across the <strong>Chicagoland</strong> area, always creating a memorable musical experience. As a jazz musician, he’s also performed at respected Chicago venues like <strong>The Whistler</strong>, <strong>Easy Does It</strong>, and <strong>Rojo Gusano</strong>.
+    </div>
+    <div id='stagger-three' class='message fade-up'>
+      From intimate gatherings to large celebrations, Tommy is easy to work with, adaptable, and focused on making the music feel just right for the moment. Please reach out with any inquiries—he would love to play at your next event!
     </div>
   </div>
 </section>
@@ -26,49 +19,26 @@
     align-items: center;
   }
 
-  #wrapper {
-    width: var(--tommy-sax-guy-width);
+  #container {
+    width: var(--hero-text-width);
     margin: 40px 0 80px 0;
     display: flex;
     flex-direction: column;
   }
-
-  #main-messages-container {
-    width: 60%;
-    align-self: flex-start;
-    /* color: var(--color-app-white); */
-    color: var(--color-accent-primary);
-  }
-
-  #detail-messages-container {
-    margin-top: 20px;
-    width: 60%;
-    align-self: flex-end;
-    color: var(--color-accent-primary);
-  }
-
-  .main-message,
-  .detail-message {
+  
+  .message {
     opacity: 0;
-  }
-
-  .main-message {
-    font-size: 22px;
-    font-weight: 500;
-    text-align: left;
-    margin: 0;
-  }
-
-  .detail-message {
     font-size: 18px;
+    color: var(--color-accent-primary);
     font-weight: 300;
-    text-align: left;
-    margin: 0;
   }
 
-  .main-message:not(:first-child),
-  .detail-message:not(:first-child) {
-    margin-top: 10px;
+  strong {
+    font-weight: 500;
+  }
+
+  .message:not(:first-child) {
+    margin-top: 20px;
   }
 
   #stagger-one {
@@ -79,8 +49,5 @@
   }
   #stagger-three {
     animation-delay: 300ms;
-  }
-  #stagger-four {
-    animation-delay: 400ms;
   }
 </style>

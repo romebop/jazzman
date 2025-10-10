@@ -82,17 +82,17 @@
 }
 
 :root {
-  --tommy-sax-guy-width: 1046px;
+  --hero-text-width: 755px;
   --header-height: 120px;
 
-  --color-background-primary: #1a1a40;
+  --color-background-primary: #4d0000;
   --color-background-secondary: #00000040;
 
   /* accent colors */
-  --color-accent-primary: #e6b422;
+  --color-accent-primary: #f4e4c8;
   --color-accent-secondary: #e66a22;
 
-  --color-app-white: #fff8e1;
+  --color-app-white: #f4e4c8;
   
   /* animation variables */
   --elastic-duration: 0.6s;
