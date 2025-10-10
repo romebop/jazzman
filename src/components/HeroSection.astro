@@ -18,10 +18,22 @@ const heroTextSize = '122px';
   <Image class='notes notes-1 fade-in' src={notes1} alt='Notes Photo 1' /> 
   <Image class='notes notes-2 fade-in' src={notes2} alt='Notes Photo 2' /> 
   <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
-  <Image id='stagger-two' class='collage collage-1' src={collage1} alt='Collage Photo 1' /> 
-  <Image id='stagger-three' class='collage collage-2' src={collage2} alt='Collage Photo 2' /> 
-  <Image id='stagger-one' class='collage collage-3' src={collage3} alt='Collage Photo 3' /> 
-  <Image id='stagger-four' class='collage collage-4' src={collage4} alt='Collage Photo 4' /> 
+  <div class='collage-container collage-1-container'>
+    <Image class='collage collage-1' src={collage1} alt='Collage Photo 1' /> 
+    <Image class='collage-backdrop collage-1 collage-1-backdrop' src={collage1} alt='Collage Photo 1 Backdrop' /> 
+  </div>
+  <div class='collage-container collage-2-container'>
+    <Image class='collage collage-2' src={collage2} alt='Collage Photo 2' /> 
+    <Image class='collage-backdrop collage-2 collage-2-backdrop' src={collage2} alt='Collage Photo 2 Backdrop' /> 
+  </div>
+  <div class='collage-container collage-3-container'>
+    <Image class='collage collage-3' src={collage3} alt='Collage Photo 3' /> 
+    <Image class='collage-backdrop collage-3 collage-3-backdrop' src={collage3} alt='Collage Photo 3 Backdrop' /> 
+  </div>
+  <div class='collage-container collage-4-container'>
+    <Image class='collage collage-4' src={collage4} alt='Collage Photo 4' /> 
+    <Image class='collage-backdrop collage-4 collage-4-backdrop' src={collage4} alt='Collage Photo 4 Backdrop' /> 
+  </div>  
 </section>
 
 <style define:vars={{ heroTextSize }}>
@@ -73,48 +85,82 @@ const heroTextSize = '122px';
     height: auto;
     width: 600px;
     transform: rotate(-45deg);
-    right: -258px;
-    top: -334px;
+    right: -338px;
+    top: -414px;
+  }
+
+  .collage-container {
+    position: absolute;
   }
 
   .collage {
-    position: absolute;
     height: auto;
-    z-index: 0;
+    position: relative;
+    z-index: 1;
   }
 
-  .collage-1 {
-    width: 460px;
+  .collage-backdrop {
+    height: auto;
+    position: absolute;
+    inset: 0;
+    transform: scale(1);
+    filter: brightness(0) invert(1);
+    z-index: 0;
+    display: none;
+  }
+
+  .collage-1-container {
     left: 50%;
     transform: translateX(-840px);
     bottom: -20px;
     z-index: 1;
   }
+  
+  .collage-1 {
+    width: 460px;
+  }
 
-  .collage-2 {
-    width: 440px;
+  .collage-2-container {
     left: 50%;
     transform: translateX(-620px);
     bottom: 0px;
   }
-
-  .collage-3 {
-    left: 50%;
-    transform: translateX(60px);
-    width: 490px;
-    bottom: -40px;
+  
+  .collage-2 {
+    width: 440px;
   }
 
-  .collage-4 {
+  .collage-2-backdrop {
+    display: inline;
+  }
+
+  .collage-3-container {
+    left: 50%;
+    transform: translateX(60px);
+    bottom: -40px;
+  }
+  
+  .collage-3 {
+    width: 490px;
+  }
+
+  .collage-4-container {
     left: 50%;
     transform: translateX(300px);
-    width: 540px;
     bottom: -300px;
+  }
+  
+  .collage-4 {
+    width: 540px;
+  }
+
+  .collage-4-backdrop {
+    display: inline;
   }
 
   @media (max-width: 768px) {
     .notes,
-    .collage {
+    .collage-container {
       display: none;
     }
 
