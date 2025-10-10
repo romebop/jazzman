@@ -1,6 +1,12 @@
 ---
 import { Image } from 'astro:assets';
 import tommyPhoto from '../assets/tommy-removebg-cropped.png';
+import collage1 from '../assets/collage1.png';
+import collage2 from '../assets/collage2.png';
+import collage3 from '../assets/collage3.png';
+import collage4 from '../assets/collage4.png';
+import notes1 from '../assets/notes1.png';
+import notes2 from '../assets/notes2.png';
 
 const heroTextSize = '122px';
 ---
@@ -9,10 +15,13 @@ const heroTextSize = '122px';
   <div class='hero-text-container'>
     <div class='hero-text fade-up'>TOMMY SAX</div>
   </div>
+  <Image class='notes-1' src={notes1} alt='Notes Photo 1' /> 
+  <Image class='notes-2' src={notes2} alt='Notes Photo 2' /> 
   <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
-  <!-- <div class='abstract-wrapper fade-in'>
-    <div class='abstract' />
-  </div> -->
+  <Image class='collage-1' src={collage1} alt='Collage Photo 1' /> 
+  <Image class='collage-2' src={collage2} alt='Collage Photo 2' /> 
+  <Image class='collage-3' src={collage3} alt='Collage Photo 3' /> 
+  <Image class='collage-4' src={collage4} alt='Collage Photo 4' /> 
 </section>
 
 <style define:vars={{ heroTextSize }}>
@@ -23,8 +32,9 @@ const heroTextSize = '122px';
     justify-content: flex-end;
     width: 100%;
     border-bottom: 1px solid var(--color-accent-primary);
-
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23e6b422' fill-opacity='0.04'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    position: relative;
+    overflow: hidden;
   }
   
   .hero-text-container {
@@ -47,12 +57,63 @@ const heroTextSize = '122px';
     margin-top: -64px;
     z-index: 2;
     width: auto;
-    /* filter:
-      drop-shadow(2px 0 0 var(--color-app-white))
-      drop-shadow(-2px 0 0 var(--color-app-white))
-      drop-shadow(0 -2px 0 var(--color-app-white))
-      drop-shadow(3px 0 0 var(--color-app-white))
-      drop-shadow(-3px 0 0 var(--color-app-white))
-      drop-shadow(0 -3px 0 var(--color-app-white)); */
+  }
+
+  .notes-1 {
+    position: absolute;
+    height: auto;
+    width: 600px;
+    transform: rotate(-45deg);
+    left: -256px;
+    bottom: -334px;
+  }
+
+  .notes-2 {
+    position: absolute;
+    height: auto;
+    width: 600px;
+    transform: rotate(-45deg);
+    right: -258px;
+    top: -334px;
+  }
+
+  .collage-1 {
+    position: absolute;
+    height: auto;
+    width: 460px;
+    left: 50%;
+    transform: translateX(-840px);
+    bottom: -20px;
+    z-index: 1;
+  }
+
+  .collage-2 {
+    position: absolute;
+    height: auto;
+    width: 460px;
+    left: 50%;
+    transform: translateX(-620px);
+    bottom: 0px;
+    z-index: 0;
+  }
+
+  .collage-3 {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    transform: translateX(60px);
+    width: 490px;
+    bottom: -40px;
+    z-index: 0;
+  }
+
+  .collage-4 {
+    position: absolute;
+    height: auto;
+    left: 50%;
+    transform: translateX(300px);
+    width: 540px;
+    bottom: -300px;
+    z-index: 0;
   }
 </style>

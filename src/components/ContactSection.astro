@@ -4,7 +4,19 @@
 <section class='contact-section'>
   
   <h1>Contact & Booking</h1>
-  
+
+  <p class='email-option'>
+    <span>Reach me at</span>
+    <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-mail'><path d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'></path><polyline points='22,6 12,13 2,6'></polyline></svg>
+    <a href='mailto:tommysaxguy@gmail.com'>tommysaxguy@gmail.com</a>
+  </p>
+
+  <div class='divider'>
+    <hr />
+    <span>or</span>
+    <hr />
+  </div>
+
   <form name='tommy-contact-form' method='POST' data-netlify='true' action='/thanks' class='contact-form'>
 
     <div class='form-group'>
@@ -87,13 +99,47 @@
     margin-bottom: 20px;
   }
 
+  .email-option {
+    color: var(--color-text-primary);
+    display: flex;
+    gap: 8px;
+  }
+
+  .email-option a {
+    color: var(--color-accent-primary);
+    text-decoration: none;
+  }
+
+  .email-option a:hover {
+    text-decoration: underline;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 422px;
+    margin: 20px 0;
+  }
+
+  .divider hr {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid var(--color-app-white);
+  }
+
+  .divider span {
+    padding: 0 20px;
+    color: var(--color-app-white);
+  }
+
   .contact-form {
     width: 100%;
     border: 1px solid var(--color-app-white);
     padding: 60px 80px;
     box-sizing: content-box;
     border-radius: 4px;
-    max-width: 440px;
+    max-width: 424px;
     display: flex;
     flex-direction: column;
     gap: 20px;
