@@ -20,19 +20,19 @@ const heroTextSize = '122px';
   <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
   <div class='collage-container collage-1-container'>
     <Image class='collage collage-1' src={collage1} alt='Collage Photo 1' /> 
-    <Image class='collage-backdrop collage-1 collage-1-backdrop' src={collage1} alt='Collage Photo 1 Backdrop' /> 
+    <div class='collage-backdrop collage-1 collage-1-backdrop' style={`-webkit-mask-image: url(${collage1.src}); mask-image: url(${collage1.src});`} /> 
   </div>
   <div class='collage-container collage-2-container'>
     <Image class='collage collage-2' src={collage2} alt='Collage Photo 2' /> 
-    <Image class='collage-backdrop collage-2 collage-2-backdrop' src={collage2} alt='Collage Photo 2 Backdrop' /> 
+    <div class='collage-backdrop collage-2 collage-2-backdrop' style={`-webkit-mask-image: url(${collage2.src}); mask-image: url(${collage2.src});`} /> 
   </div>
   <div class='collage-container collage-3-container'>
     <Image class='collage collage-3' src={collage3} alt='Collage Photo 3' /> 
-    <Image class='collage-backdrop collage-3 collage-3-backdrop' src={collage3} alt='Collage Photo 3 Backdrop' /> 
+    <div class='collage-backdrop collage-3 collage-3-backdrop' style={`-webkit-mask-image: url(${collage3.src}); mask-image: url(${collage3.src});`} /> 
   </div>
   <div class='collage-container collage-4-container'>
     <Image class='collage collage-4' src={collage4} alt='Collage Photo 4' /> 
-    <Image class='collage-backdrop collage-4 collage-4-backdrop' src={collage4} alt='Collage Photo 4 Backdrop' /> 
+    <div class='collage-backdrop collage-4 collage-4-backdrop' style={`-webkit-mask-image: url(${collage4.src}); mask-image: url(${collage4.src});`} /> 
   </div>  
 </section>
 
@@ -100,12 +100,19 @@ const heroTextSize = '122px';
   }
 
   .collage-backdrop {
-    height: auto;
     position: absolute;
     inset: 0;
-    transform: scale(1);
-    filter: brightness(0) invert(1);
+    transform: scale(1.04);
+    background-color: var(--color-accent-primary);
     z-index: 0;
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: cover;
+    mask-size: cover;
+
     display: none;
   }
 
@@ -127,7 +134,7 @@ const heroTextSize = '122px';
   }
   
   .collage-2 {
-    width: 440px;
+    width: 414px;
   }
 
   .collage-2-backdrop {
