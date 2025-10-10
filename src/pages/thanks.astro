@@ -7,8 +7,8 @@ const pageTitle = 'Thank You';
 <BaseLayout pageTitle={pageTitle}>
   <div class='thanks-container'>
     <h1>Thank You!</h1>
-    <div>Your message has been sent successfully.</div>
-    <div>I'll get back to you as soon as possible.</div>
+    <div class='small-text'>Your message has been sent successfully.</div>
+    <div class='small-text'>I'll get back to you as soon as possible.</div>
   </div>
 </BaseLayout>
 
@@ -28,10 +28,9 @@ const pageTitle = 'Thank You';
     margin-bottom: 20px;
   }
 
-  p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    max-width: 500px;
+  .small-text {
+    font-size: 16px;
+    line-height: 1.8;
   }
 
   a {
@@ -48,5 +47,11 @@ const pageTitle = 'Thank You';
 
   a:hover {
     filter: brightness(110%);
+  }
+
+  @media (max-width: 768px) {
+    .small-text {
+      font-size: 14px;
+    }
   }
 </style>
