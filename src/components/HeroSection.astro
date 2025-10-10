@@ -1,5 +1,6 @@
 ---
 import { Image } from 'astro:assets';
+import signature from '../assets/signature.png';
 import tommyPhoto from '../assets/tommy-removebg-cropped.png';
 import collage1 from '../assets/collage1.png';
 import collage2 from '../assets/collage2.png';
@@ -12,6 +13,7 @@ const heroTextSize = '122px';
 ---
 
 <section>
+  <div class='signature' style={`-webkit-mask-image: url('${signature.src}'); mask-image: url('${signature.src}');`} />
   <div class='hero-text-container'>
     <div class='hero-text fade-up'>TOMMY SAX</div>
   </div>
@@ -48,9 +50,22 @@ const heroTextSize = '122px';
     position: relative;
     overflow: hidden;
   }
+
+  .signature {
+    width: 160px;
+    height: 80px;
+    background-color: var(--color-accent-primary);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    margin-top: 40px;
+  }
   
   .hero-text-container {
-    margin-top: 100px;
+    margin-top: 40px;
     z-index: 1;
   }
 
@@ -166,6 +181,11 @@ const heroTextSize = '122px';
   }
 
   @media (max-width: 768px) {
+    .signature {
+      width: 80px;
+      height: 40px;
+    }
+
     .notes,
     .collage-container {
       display: none;
