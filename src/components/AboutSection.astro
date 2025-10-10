@@ -24,11 +24,11 @@
     margin: 40px 0 80px 0;
     display: flex;
     flex-direction: column;
+    font-size: 18px;
   }
   
   .message {
     opacity: 0;
-    font-size: 18px;
     color: var(--color-accent-primary);
     font-weight: 300;
   }
@@ -49,5 +49,13 @@
   }
   #stagger-three {
     animation-delay: 300ms;
+  }
+
+  @media (max-width: 768px) {
+    #container {
+      width: unset;
+      padding: 0 40px;
+      font-size: 14px;
+    }
   }
 </style>

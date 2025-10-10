@@ -102,6 +102,7 @@
   .email-option {
     color: var(--color-text-primary);
     display: flex;
+    align-items: center;
     gap: 8px;
   }
 
@@ -280,6 +281,36 @@
     background-color: var(--color-accent-secondary);
     color: #fff;
     text-decoration: none;
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 32px;
+    }
+
+    .email-option {
+      font-size: 14px;
+    }
+
+    .divider {
+      width: 280px;
+      font-size: 14px;
+    }
+
+    .contact-form {
+      width: 94%;
+      padding: 60px 20px;
+      box-sizing: border-box;
+    }
+
+    label,
+    legend {
+      font-size: 14px;
+    }
+
+    button[type='submit']  {
+      font-size: 14px;
+    }
   }
 </style>
 

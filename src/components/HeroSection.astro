@@ -15,13 +15,13 @@ const heroTextSize = '122px';
   <div class='hero-text-container'>
     <div class='hero-text fade-up'>TOMMY SAX</div>
   </div>
-  <Image class='notes-1' src={notes1} alt='Notes Photo 1' /> 
-  <Image class='notes-2' src={notes2} alt='Notes Photo 2' /> 
+  <Image class='notes notes-1 fade-in' src={notes1} alt='Notes Photo 1' /> 
+  <Image class='notes notes-2 fade-in' src={notes2} alt='Notes Photo 2' /> 
   <Image class='tommy-photo' src={tommyPhoto} alt='Tommy photo' />
-  <Image class='collage-1' src={collage1} alt='Collage Photo 1' /> 
-  <Image class='collage-2' src={collage2} alt='Collage Photo 2' /> 
-  <Image class='collage-3' src={collage3} alt='Collage Photo 3' /> 
-  <Image class='collage-4' src={collage4} alt='Collage Photo 4' /> 
+  <Image id='stagger-two' class='collage collage-1' src={collage1} alt='Collage Photo 1' /> 
+  <Image id='stagger-three' class='collage collage-2' src={collage2} alt='Collage Photo 2' /> 
+  <Image id='stagger-one' class='collage collage-3' src={collage3} alt='Collage Photo 3' /> 
+  <Image id='stagger-four' class='collage collage-4' src={collage4} alt='Collage Photo 4' /> 
 </section>
 
 <style define:vars={{ heroTextSize }}>
@@ -77,9 +77,13 @@ const heroTextSize = '122px';
     top: -334px;
   }
 
-  .collage-1 {
+  .collage {
     position: absolute;
     height: auto;
+    z-index: 0;
+  }
+
+  .collage-1 {
     width: 460px;
     left: 50%;
     transform: translateX(-840px);
@@ -88,32 +92,41 @@ const heroTextSize = '122px';
   }
 
   .collage-2 {
-    position: absolute;
-    height: auto;
-    width: 460px;
+    width: 440px;
     left: 50%;
     transform: translateX(-620px);
     bottom: 0px;
-    z-index: 0;
   }
 
   .collage-3 {
-    position: absolute;
-    height: auto;
     left: 50%;
     transform: translateX(60px);
     width: 490px;
     bottom: -40px;
-    z-index: 0;
   }
 
   .collage-4 {
-    position: absolute;
-    height: auto;
     left: 50%;
     transform: translateX(300px);
     width: 540px;
     bottom: -300px;
-    z-index: 0;
+  }
+
+  @media (max-width: 768px) {
+    .notes,
+    .collage {
+      display: none;
+    }
+
+    .hero-text {
+      font-size: 50px;
+      line-height: 50px;
+    }
+
+    .tommy-photo {
+      width: 260px;
+      height: auto;
+      margin-top: -32px;
+    }
   }
 </style>
