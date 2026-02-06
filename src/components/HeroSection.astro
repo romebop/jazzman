@@ -13,7 +13,16 @@ const heroTextSize = '122px';
 ---
 
 <section>
-  <div class='signature' style={`-webkit-mask-image: url('${signature.src}'); mask-image: url('${signature.src}');`} />
+  <div class='symbols-container'>
+    <div class='signature' style={`-webkit-mask-image: url('${signature.src}'); mask-image: url('${signature.src}');`} />
+    <a href='https://www.instagram.com/tommysaxguy' target='_blank' rel='me noopener' class='instagram-link' title='Instagram'>
+      <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-instagram'>
+        <rect x='2' y='2' width='20' height='20' rx='5' ry='5'></rect>
+        <path d='M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z'></path>
+        <line x1='17.5' y1='6.5' x2='17.51' y2='6.5'></line>
+      </svg>
+    </a>
+  </div>
   <div class='hero-text-container'>
     <div class='hero-text fade-up'>TOMMY SAX</div>
   </div>
@@ -46,14 +55,31 @@ const heroTextSize = '122px';
     justify-content: flex-end;
     width: 100%;
     border-bottom: 1px solid var(--color-accent-primary);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23e6b422' fill-opacity='0.04'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E");
+    background-image: url('data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cg fill='%23e6b422' fill-opacity='0.04'%3E%3Cpolygon fill-rule='evenodd' points='8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4'/%3E%3C/g%3E%3C/svg%3E');
     position: relative;
     overflow: hidden;
   }
 
+  .symbols-container {
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
+
+  .instagram-link {
+    margin-left: 22px;
+    color: var(--color-accent-primary);
+    transition: color 0.3s ease;
+    width: 32px;
+  }
+
+  .instagram-link:hover {
+    color: var(--color-accent-secondary);
+  }
+
   .signature {
-    width: 160px;
-    height: 80px;
+    width: 120px;
+    height: 62px;
     background-color: var(--color-accent-primary);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
@@ -61,7 +87,6 @@ const heroTextSize = '122px';
     mask-size: contain;
     -webkit-mask-position: center;
     mask-position: center;
-    margin-top: 40px;
   }
   
   .hero-text-container {
@@ -191,6 +216,11 @@ const heroTextSize = '122px';
     .signature {
       width: 80px;
       height: 40px;
+    }
+
+    .instagram-link {
+      margin-left: 16px;
+      width: 24px;
     }
 
     .notes,
